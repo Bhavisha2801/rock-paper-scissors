@@ -2,6 +2,7 @@ body {
   background-color: rgb(25, 25, 25);
   color: white;
   font-family: Arial;
+  text-align: center;
 }
 
 .title {
@@ -40,4 +41,6 @@ body {
   padding: 10px;
   font-size: 15px;
   cursor: pointer;
+  margin: 10px;
+  border-radius: 4px;
 }
