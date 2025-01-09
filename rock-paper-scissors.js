@@ -25,6 +25,51 @@ else {
 }
 }
 
+document.querySelector('.js-rock-button')
+.addEventListener('click', () => {
+  playGame('rock');
+});
+
+document.querySelector('.js-paper-button')
+.addEventListener('click', () => {
+  playGame('paper');
+});
+
+document.querySelector('.js-scissors-button')
+.addEventListener('click', () => {
+  playGame('scissors');
+});
+
+document.querySelector('.js-reset-score-button')
+.addEventListener('click', () => {
+  scoreBoard = {
+    win: 0,
+    lose: 0,
+    tie: 0
+}
+localStorage.removeItem('score');
+updateScore();
+document.querySelector('.js-result').innerHTML = '';
+document.querySelector('.js-moves').innerHTML = '';
+});
+
+document.querySelector('.js-auto-play')
+.addEventListener('click', () => {
+  autoPlay();
+});
+
+document.body.addEventListener('keydown', (event) => {
+  if(event.key === 'r') {
+    playGame('rock');
+  }
+  else if(event.key === 'p') {
+    playGame('paper');
+  }
+  else if(event.key === 's') {
+    playGame('scissors');
+  }
+});
+
 function playGame(playerMove) {
 computerMove = pickComputerMove();
 
